@@ -1,9 +1,9 @@
 class Fastspar < Formula
   desc " Rapid and scalable correlation estimation for compositional data"
-  homepage "https://github.com/scwatts/fastspar"
-  url "https://github.com/scwatts/fastspar/archive/v0.0.5.tar.gz"
+  homepage "https://github.com/pschloss/fastspar"
+  url "https://github.com/pschloss/fastspar/archive/v0.0.5.tar.gz"
   sha256 "c4cc7682720f566da7587e555b58a688671a97235d00c33d042a7f2cd6cef20a"
-  head "https://github.com/scwatts/fastspar.git"
+  head "https://github.com/pschloss/fastspar.git"
 
   depends_on "armadillo" => :run
   depends_on "gsl" => :run
@@ -15,7 +15,7 @@ class Fastspar < Formula
   def install
     system "./configure", "CC=gcc-6",
                           "CXX=g++-6",
-                          "LDFLAGS=-L/usr/local/opt/openblas/lib",
+                          "LDFLAGS=-L#{HOMEBREW_PREFIX}/lib/openblas/",
                           "--prefix=#{prefix}"
     system "make", "-j", "install"
   end
