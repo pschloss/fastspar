@@ -15,7 +15,7 @@ class Fastspar < Formula
   def install
     system "./configure", "CC=gcc-6",
                           "CXX=g++-6",
-                          "LDFLAGS=-L#{HOMEBREW_PREFIX}/lib/openblas/",
+                          "LDFLAGS=-L/usr/local/opt/openblas/lib",
                           "--prefix=#{prefix}"
     system "make", "-j", "install"
   end
